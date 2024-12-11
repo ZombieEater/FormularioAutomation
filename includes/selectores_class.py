@@ -1,5 +1,5 @@
 class Locator():
-    nombre = "firsdtName"
+    nombre = "firstName"
     apellido = "lastName"
     nombre_usuario = "username"
     email = "email"

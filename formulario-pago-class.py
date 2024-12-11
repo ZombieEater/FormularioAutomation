@@ -47,15 +47,14 @@ for i, registro in enumerate(listado):
 quit()
 
 
+#body = driver.find_element(By.TAG_NAME, 'body')
+#str_nombre = driver.find_element(By.ID, Locator.nombre)
+#str_apellido = driver.find_element(By.ID, Locator.apellido)
+#str_nombre_usuario = driver.find_element(By.ID, Locator.nombre_usuario)
+#str_email = driver.find_element(By.ID, Locator.email)
+#str_direccion1 = driver.find_element(By.ID, Locator.direccion1)
+#str_direccion2 = driver.find_element(By.ID, Locator.direccion2)
 
-body = driver.find_element(By.TAG_NAME, 'body')
-
-str_nombre = driver.find_element(By.ID, Locator.nombre)
-str_apellido = driver.find_element(By.ID, Locator.apellido)
-str_nombre_usuario = driver.find_element(By.ID, Locator.nombre_usuario)
-str_email = driver.find_element(By.ID, Locator.email)
-str_direccion1 = driver.find_element(By.ID, Locator.direccion1)
-str_direccion2 = driver.find_element(By.ID, Locator.direccion2)
 # Select de Pais
 # El indice empieza en 1
 cbo_pais_option = "2" # lo defino como string para contatenarlo al llamar al selector

@@ -1,27 +1,2 @@
-[2024-12-11 17:03:40] Lectura del archivo de datos.
-[2024-12-11 17:03:40] Se leyeron 7 registros del archivo.
-[2024-12-11 17:05:43] Lectura del archivo de datos.
-[2024-12-11 17:05:43] Se leyeron 7 registros del archivo.
-[2024-12-11 17:05:46] Error: No se encontró el elemento firsdtName en la página.
-[2024-12-11 17:05:46] Error al procesar el registro 1: 'NoneType' object has no attribute 'send_keys'
-[2024-12-11 17:05:46] Error: No se encontró el elemento firsdtName en la página.
-[2024-12-11 17:05:46] Error al procesar el registro 2: 'NoneType' object has no attribute 'send_keys'
-[2024-12-11 17:05:46] Error: No se encontró el elemento firsdtName en la página.
-[2024-12-11 17:05:46] Error al procesar el registro 3: 'NoneType' object has no attribute 'send_keys'
-[2024-12-11 17:05:46] Error: No se encontró el elemento firsdtName en la página.
-[2024-12-11 17:05:47] Error al procesar el registro 4: 'NoneType' object has no attribute 'send_keys'
-[2024-12-11 17:05:47] Error: No se encontró el elemento firsdtName en la página.
-[2024-12-11 17:05:47] Error al procesar el registro 5: 'NoneType' object has no attribute 'send_keys'
-[2024-12-11 17:05:47] Error: No se encontró el elemento firsdtName en la página.
-[2024-12-11 17:05:47] Error al procesar el registro 6: 'NoneType' object has no attribute 'send_keys'
-[2024-12-11 17:05:47] Error: No se encontró el elemento firsdtName en la página.
-[2024-12-11 17:05:47] Error al procesar el registro 7: 'NoneType' object has no attribute 'send_keys'
-[2024-12-11 17:08:08] Lectura del archivo de datos.
-[2024-12-11 17:08:08] Se leyeron 7 registros del archivo.
-[2024-12-11 17:08:12] Error: No se encontró el elemento firsdtName en la página.
-[2024-12-11 17:08:13] Error: No se encontró el elemento firsdtName en la página.
-[2024-12-11 17:08:15] Error: No se encontró el elemento firsdtName en la página.
-[2024-12-11 17:08:17] Error: No se encontró el elemento firsdtName en la página.
-[2024-12-11 17:08:18] Error: No se encontró el elemento firsdtName en la página.
-[2024-12-11 17:08:20] Error: No se encontró el elemento firsdtName en la página.
-[2024-12-11 17:08:22] Error: No se encontró el elemento firsdtName en la página.
+[2024-12-11 17:18:17] Lectura del archivo de datos.
+[2024-12-11 17:18:17] Se leyeron 7 registros del archivo.

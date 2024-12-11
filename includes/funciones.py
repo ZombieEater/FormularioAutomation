@@ -7,6 +7,7 @@ from selenium.webdriver import Keys
 from selenium.common.exceptions import NoSuchElementException, WebDriverException
 
 from includes.selectores_class import Locator, Messages
+from includes.config import config
 
 
 driver = None
@@ -71,6 +72,10 @@ def espera(tipo_espera):
 
 # Funciones Kaos
 
+
+
+
+
 class esperar():
     def corto():
         print("esperando corto")
@@ -88,24 +93,27 @@ import datetime
 
 def log_evento(tipo_evento, evento):
     """
-    Registra un evento en un archivo de texto con la fecha y hora actuales.
+    Registra un evento en un archivo de texto con la fecha y hora actuales si el flag LOG de la clase CONFIG es verdadero. Sino pasa de largo.
 
     :param evento: (str) Descripción del evento a registrar.
     :param archivo: (str) Nombre del archivo donde se guardará el registro. Por defecto es 'registro_eventos.txt'.
     """
-    output_file = "log.txt"
+    if (config.LOG):
+        output_file = "log.txt"
 
-    try:
-        # Obtener la fecha y hora actuales
-        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        # Crear el mensaje de registro
-        mensaje = f"[{timestamp}] {evento}\n"
-        # Escribir el mensaje en el archivo
-        with open(output_file, "a", encoding="utf-8") as file:
-            file.write(mensaje)
-        #print("Evento registrado exitosamente.")
-    except Exception as e:
-        print(f"Error al registrar el evento: {e}")
+        print(config.LOG)
+
+        try:
+            # Obtener la fecha y hora actuales
+            timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            # Crear el mensaje de registro
+            mensaje = f"[{timestamp}] {evento}\n"
+            # Escribir el mensaje en el archivo
+            with open(output_file, "a", encoding="utf-8") as file:
+                file.write(mensaje)
+            #print("Evento registrado exitosamente.")
+        except Exception as e:
+            print(f"Error al registrar el evento: {e}")
 
 # Ejemplos de uso
 #log_evento ('Evento', 'Inicio del programa.')
@@ -145,6 +153,10 @@ def completa_form (registro):
     str_email = selecciona(By.ID, Locator.email)
     str_direccion1 = selecciona(By.ID, Locator.direccion1)
     str_direccion2 = selecciona(By.ID, Locator.direccion2)
+    # Select de Pais
+    # El indice empieza en 1
+    cbo_pais_option = registro['country'] # lo defino como string para contatenarlo al llamar al selector
+    cbo_pais = selecciona(By.CSS_SELECTOR, Locator.pais(cbo_pais_option))
     
     # Está hecho de esta forma, pero realmente la función que obtiene el elemento, si no pudo, ya debería devolver el error al loop del script original en vez de continuar con los elementos. Entiendo que es regla de negocio o análisis de log.
 
@@ -154,5 +166,6 @@ def completa_form (registro):
     escribir(str_email, registro['email'])
     escribir(str_direccion1, registro['address_1'])
     escribir(str_direccion2, registro['address_2'])
+    cbo_pais.click()
 
     esperar.corto()

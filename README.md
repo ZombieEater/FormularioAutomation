@@ -5,6 +5,7 @@
 - Clases para reutilizar código.
 - Log a archivo de texto.
 - Procesar archivo csv.
+- Se adiciona config para las constantes.
 
 Funcionamiento:
 

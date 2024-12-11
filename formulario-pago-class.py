@@ -1,35 +1,51 @@
 import time
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver import Keys
 from selenium.common.exceptions import NoSuchElementException, WebDriverException
-from includes.funciones import escribir,mi_click,nuevo_driver,navegar,maximiza, esperar
+from includes.funciones import escribir,mi_click,nuevo_driver,navegar,maximiza, esperar, log_evento, leer_csv, completa_form
 from includes.selectores_class import Locator, Messages
 
 '''
-DISCLAIMER:
-Por costumbre, todo lo que sean funciones o fragmentos reusables, suelo meterlos en una carpeta que lo diferencia de los archivos principales, en este caso INCLUDES, contiene las funciones, los selectores y demás.
-
-Modifiqué, con idea de que me corrijan si está mal o no es buena práctica, en vez de usar el diccionario de "SELECTORES", que me incomodaba que no los autocompletaba, pasé los selectores como una CLASE de Python, que cada valor, es una propiedad, entonces me lo autocompleta cuando pongo Locator.****
-
-PERO para el caso el menú desplegable, yo le tengo que indicar el índice para que seleccione lo que quiero...entonces es un método (una función dentro de la clase), y así le puedo pasar EN MODO TEXTO (con comillas), el índice del pais o provincia a seleccionar (aun no lo clickea, solo lo selecciona).
-
-De la misma forma, la funcion espera, la cambié por una clase dentro de las funciones, donde el tiempo a esperar, tambien se lo mando como una propiedad.
-
-Como mala práctica, pero para no marear, los mensajes que espero de un boton, a presentar en pantalla, etc, los puse dentro de selectores (deberia ir a otro lado, porque no son selectores, pero la idea es esa...)...entonces también limpié el código usando "variables" en vez de texto hardcodeado.
-
-Si mareé: 0-800-666-HELP  jaja
+Leer el historial de cambios en el README.md
 
 '''
+log_evento('evento', 'Lectura del archivo de datos.')
+nombre_archivo = 'datos/datos.csv'
+listado = leer_csv(nombre_archivo)
+log_evento('evento',f'Se leyeron {len(listado)} registros del archivo.')
 
 # abro el navegador
 driver = nuevo_driver('Chrome')
 # maximiza la pantalla
 maximiza()
-# abre el site requerido
-navegar()
 
-esperar.corto()
+#esperar.corto()
+
+for i, registro in enumerate(listado):
+    try:
+        # Crear una URL personalizada utilizando los datos del registro
+        # abre el site requerido
+        navegar()        
+        esperar.corto()
+        print (i['first_name'])
+
+
+        
+        # Ejemplo: verificar el título de la página
+        #print(f'Título de la página: {driver.title}')
+        #log_evento('event',f'Procesando {i['first_name']}.')
+    except Exception as e:
+        log_evento('error', f'Error al procesar el registro {i + 1}: {e}')
+        print(f'Error al procesar el registro {i + 1}: {e}')
+
+
+
+
+quit()
+
+
 
 body = driver.find_element(By.TAG_NAME, 'body')
 

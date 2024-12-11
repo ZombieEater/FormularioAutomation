@@ -1,0 +1,47 @@
+[2024-12-11 15:53:33] Inicio del proógrama.
+[2024-12-11 15:53:33] Elemento no encontrado.
+[2024-12-11 16:14:17] Iniciando ejecución.
+[2024-12-11 16:14:47] Iniciando ejecución.
+[2024-12-11 16:15:18] Iniciando ejecución.
+[2024-12-11 16:15:54] Iniciando ejecución.
+[2024-12-11 16:26:21] Lectura del archivo de datos.
+[2024-12-11 16:26:21] Se leyeron 7
+[2024-12-11 16:26:39] Lectura del archivo de datos.
+[2024-12-11 16:26:39] Se leyeron 7 registros del archivo.
+[2024-12-11 16:30:43] Lectura del archivo de datos.
+[2024-12-11 16:30:43] Se leyeron 0 registros del archivo.
+[2024-12-11 16:31:29] Lectura del archivo de datos.
+[2024-12-11 16:31:29] Se leyeron 7 registros del archivo.
+[2024-12-11 16:32:30] Lectura del archivo de datos.
+[2024-12-11 16:32:30] Se leyeron 7 registros del archivo.
+[2024-12-11 16:37:47] Lectura del archivo de datos.
+[2024-12-11 16:37:47] Se leyeron 7 registros del archivo.
+[2024-12-11 16:40:06] Lectura del archivo de datos.
+[2024-12-11 16:40:06] Se leyeron 7 registros del archivo.
+[2024-12-11 16:40:10] Error al procesar el registro 1: 'int' object is not subscriptable
+[2024-12-11 16:40:11] Error al procesar el registro 2: 'int' object is not subscriptable
+[2024-12-11 16:40:12] Error al procesar el registro 3: 'int' object is not subscriptable
+[2024-12-11 16:40:13] Error al procesar el registro 4: 'int' object is not subscriptable
+[2024-12-11 16:40:14] Error al procesar el registro 5: 'int' object is not subscriptable
+[2024-12-11 16:40:15] Error al procesar el registro 6: 'int' object is not subscriptable
+[2024-12-11 16:40:17] Error al procesar el registro 7: 'int' object is not subscriptable
+[2024-12-11 16:41:27] Lectura del archivo de datos.
+[2024-12-11 16:41:27] Se leyeron 7 registros del archivo.
+[2024-12-11 16:41:49] Lectura del archivo de datos.
+[2024-12-11 16:41:49] Se leyeron 7 registros del archivo.
+[2024-12-11 16:41:51] Error al procesar el registro 1: 'int' object is not subscriptable
+[2024-12-11 16:41:51] Error al procesar el registro 2: 'int' object is not subscriptable
+[2024-12-11 16:41:51] Error al procesar el registro 3: 'int' object is not subscriptable
+[2024-12-11 16:41:51] Error al procesar el registro 4: 'int' object is not subscriptable
+[2024-12-11 16:41:51] Error al procesar el registro 5: 'int' object is not subscriptable
+[2024-12-11 16:41:51] Error al procesar el registro 6: 'int' object is not subscriptable
+[2024-12-11 16:41:51] Error al procesar el registro 7: 'int' object is not subscriptable
+[2024-12-11 16:42:36] Lectura del archivo de datos.
+[2024-12-11 16:42:36] Se leyeron 7 registros del archivo.
+[2024-12-11 16:42:40] Error al procesar el registro 1: 'int' object is not subscriptable
+[2024-12-11 16:42:41] Error al procesar el registro 2: 'int' object is not subscriptable
+[2024-12-11 16:42:42] Error al procesar el registro 3: 'int' object is not subscriptable
+[2024-12-11 16:42:43] Error al procesar el registro 4: 'int' object is not subscriptable
+[2024-12-11 16:42:44] Error al procesar el registro 5: 'int' object is not subscriptable
+[2024-12-11 16:42:45] Error al procesar el registro 6: 'int' object is not subscriptable
+[2024-12-11 16:42:46] Error al procesar el registro 7: 'int' object is not subscriptable

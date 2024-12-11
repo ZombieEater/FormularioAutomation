@@ -1,2 +1,2 @@
 class config():
-    LOG = True
+    LOG = False

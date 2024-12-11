@@ -98,7 +98,7 @@ def log_evento(tipo_evento, evento):
     :param evento: (str) Descripción del evento a registrar.
     :param archivo: (str) Nombre del archivo donde se guardará el registro. Por defecto es 'registro_eventos.txt'.
     """
-    if (config.LOG):
+    if (config.LOG or tipo_evento == 'error'):
         output_file = "log.txt"
 
         print(config.LOG)

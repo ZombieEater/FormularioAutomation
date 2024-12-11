@@ -1,2 +1,0 @@
-[2024-12-11 17:18:17] Lectura del archivo de datos.
-[2024-12-11 17:18:17] Se leyeron 7 registros del archivo.

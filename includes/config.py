@@ -1,2 +1,3 @@
 class config():
-    LOG = False
+    LOG = True
+    PRINT = True

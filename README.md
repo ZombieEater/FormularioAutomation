@@ -1,4 +1,4 @@
-20241211
+20241211 V 1.0
 
 - Reorganizado de archivos.
 - Repo publico.
@@ -15,10 +15,15 @@ Funcionamiento:
 
 - Se procesa el diccionario invocando al driver con una función.
 
+- Las funciones de LOG y PRINT son sobreescritas con las mias, para poder gestionarlo desde la configuración
 
+- El llenado del formulario se hace desde una función. Si algún elemento no se encontrase, se salta el registro y continúa la ejecución.
 
+- El click del boton principal y la espera de la página de OK, se gestionan desde el script principal por comodidad de lectura.
 
+- Se debería agregar la captura de errores de obtención del elemento antes de intentar llenarlo, hacerlo todo en un solo paso.
 
+- Uno de los elementos de prueba, tiene error en el email para verificar la captura de error.
 
 
 ---------------

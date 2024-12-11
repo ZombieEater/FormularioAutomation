@@ -51,10 +51,10 @@ def selecciona (by, selector):
     try:
         return driver.find_element(by, selector)
     except NoSuchElementException:
-        print(f'Error: No se encontró el elemento {selector} en la página.')
+        printKaos(f'Error: No se encontró el elemento {selector} en la página.')
         log_evento('error', f'Error: No se encontró el elemento {selector} en la página.')
     except WebDriverException as e:
-        print('WebDriver error occurred: {e}')
+        printKaos('WebDriver error occurred: {e}')
         log_evento('error', 'WebDriver error occurred: {e}')
 
 
@@ -72,19 +72,19 @@ def espera(tipo_espera):
 
 # Funciones Kaos
 
-
-
-
+def printKaos(mensaje):
+    if (config.PRINT):
+        print(mensaje)
 
 class esperar():
     def corto():
-        print("esperando corto")
+        printKaos("esperando corto")
         time.sleep(1)
     def medio():
-        print("esperando medio")
+        printKaos("esperando medio")
         time.sleep(2)
     def largo():
-        print("esperando largo")
+        printKaos("esperando largo")
         time.sleep(4)
 
     
@@ -101,7 +101,7 @@ def log_evento(tipo_evento, evento):
     if (config.LOG or tipo_evento == 'error'):
         output_file = "log.txt"
 
-        print(config.LOG)
+        #print(config.LOG)
 
         try:
             # Obtener la fecha y hora actuales
@@ -113,7 +113,7 @@ def log_evento(tipo_evento, evento):
                 file.write(mensaje)
             #print("Evento registrado exitosamente.")
         except Exception as e:
-            print(f"Error al registrar el evento: {e}")
+            printKaos(f"Error al registrar el evento: {e}")
 
 # Ejemplos de uso
 #log_evento ('Evento', 'Inicio del programa.')
@@ -157,7 +157,19 @@ def completa_form (registro):
     # El indice empieza en 1
     cbo_pais_option = registro['country'] # lo defino como string para contatenarlo al llamar al selector
     cbo_pais = selecciona(By.CSS_SELECTOR, Locator.pais(cbo_pais_option))
-    
+    # Select de la provincia
+    cbo_provincia_option = registro['province']
+    cbo_provincia = selecciona (By.CSS_SELECTOR, Locator.provincia(cbo_provincia_option))
+
+    str_cod_postal =  selecciona (By.ID, Locator.codigo_postal)
+    chk_dir_envio =  selecciona (By.ID, Locator.dir_envio)
+    chk_guarda_info =  selecciona (By.ID, Locator.guarda_info)
+    str_nombre_tarjeta =  selecciona (By.ID, Locator.nombre_tarjeta)
+    str_numero_tarjeta =  selecciona (By.ID, Locator.numero_tarjeta)
+    str_fecha_expiracion =  selecciona (By.ID, Locator.fecha_expiracion)
+    int_cvv =  selecciona (By.ID, Locator.cvv)
+    btn_continuar =  selecciona (By.CSS_SELECTOR, Locator.boton_continuar)
+
     # Está hecho de esta forma, pero realmente la función que obtiene el elemento, si no pudo, ya debería devolver el error al loop del script original en vez de continuar con los elementos. Entiendo que es regla de negocio o análisis de log.
 
     escribir(str_nombre, registro['first_name'])
@@ -167,5 +179,21 @@ def completa_form (registro):
     escribir(str_direccion1, registro['address_1'])
     escribir(str_direccion2, registro['address_2'])
     cbo_pais.click()
+    cbo_provincia.click()
+    escribir(str_cod_postal, registro['zip'])
 
-    esperar.corto()
+    body.send_keys(Keys.PAGE_DOWN)
+    body.send_keys(Keys.PAGE_DOWN)
+    body.send_keys(Keys.PAGE_DOWN)
+
+    if (registro['send_to'] == '1'):
+        chk_dir_envio.click()
+    if (registro['save_address'] == '1'):        
+        chk_guarda_info.click()
+
+    escribir(str_nombre_tarjeta, registro['card_first_name'])
+    escribir(str_numero_tarjeta, registro['card_number'])
+    escribir(str_fecha_expiracion,registro['card_exp'])
+    escribir(int_cvv,registro['card_cvv'])
+    
+    #esperar.medio()

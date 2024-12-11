@@ -1,0 +1,19 @@
+[2024-12-11 17:56:34] Lectura del archivo de datos.
+[2024-12-11 17:56:34] Se leyeron 7 registros del archivo.
+[2024-12-11 17:56:41] Procesado registro1.
+[2024-12-11 17:56:46] Procesado registro2.
+[2024-12-11 17:56:52] Procesado registro3.
+[2024-12-11 17:56:56] Procesado registro4.
+[2024-12-11 17:57:01] Procesado registro5.
+[2024-12-11 17:57:07] Procesado registro6.
+[2024-12-11 17:57:11] Procesado registro7.
+[2024-12-11 18:01:43] Lectura del archivo de datos.
+[2024-12-11 18:01:43] Se leyeron 7 registros del archivo.
+[2024-12-11 18:01:51] Error: No se encontró el elemento body > form > button en la página.
+[2024-12-11 18:01:51] Error al procesar el registro 1: 'NoneType' object has no attribute 'text'
+[2024-12-11 18:01:55] Procesado registro 2.
+[2024-12-11 18:02:00] Procesado registro 3.
+[2024-12-11 18:02:05] Procesado registro 4.
+[2024-12-11 18:02:10] Procesado registro 5.
+[2024-12-11 18:02:15] Procesado registro 6.
+[2024-12-11 18:02:20] Procesado registro 7.

@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver import Keys
 from selenium.common.exceptions import NoSuchElementException, WebDriverException
+
 from includes.funciones import escribir,mi_click,nuevo_driver,navegar,maximiza, esperar, log_evento, leer_csv, completa_form
 from includes.selectores_class import Locator, Messages
 
@@ -28,11 +29,11 @@ for i, registro in enumerate(listado):
         # Crear una URL personalizada utilizando los datos del registro
         # abre el site requerido
         navegar()        
-        esperar.corto()
-        print (i['first_name'])
+        #esperar.corto()
+        #print (i['first_name'])
 
+        completa_form(registro)
 
-        
         # Ejemplo: verificar el título de la página
         #print(f'Título de la página: {driver.title}')
         #log_evento('event',f'Procesando {i['first_name']}.')

@@ -1,6 +1,13 @@
 import time
 import csv
+
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver import Keys
+from selenium.common.exceptions import NoSuchElementException, WebDriverException
+
+from includes.selectores_class import Locator, Messages
+
 
 driver = None
 ############################## Funciones del driver
@@ -27,24 +34,32 @@ def navegar():
 
 ###################################### Funciones de Elementos
 
-# obtener elemento
-#def obtener()
-
 # reemplaza al click
 def mi_click(elemento):
     elemento.click()
 
 #reemplaza el send.keys
-def escribir(selector,dato_a_escribir):
+def escribir (selector, dato_a_escribir):
+    #if (selector != None):
     selector.send_keys(dato_a_escribir)
-    #time.sleep(1)
-
-def selecciona(by,selector):
+    #else:
+    #    print('No se pudo escribir el elemento.')
+    
+def selecciona (by, selector):
     global driver
-    return driver.find_element(by, selector) 
+    try:
+        return driver.find_element(by, selector)
+    except NoSuchElementException:
+        print(f'Error: No se encontró el elemento {selector} en la página.')
+        log_evento('error', f'Error: No se encontró el elemento {selector} en la página.')
+    except WebDriverException as e:
+        print('WebDriver error occurred: {e}')
+        log_evento('error', 'WebDriver error occurred: {e}')
+
 
 ###################################### Funciones de espera
 #reemplaza al sleep de python
+'''
 def espera(tipo_espera):
     if tipo_espera == 'WAIT_CORTO':
         time.sleep(1)
@@ -52,6 +67,9 @@ def espera(tipo_espera):
         time.sleep(2)
     elif tipo_espera == 'WAIT_LARGO':
         time.sleep(3)
+'''
+
+# Funciones Kaos
 
 class esperar():
     def corto():
@@ -85,7 +103,7 @@ def log_evento(tipo_evento, evento):
         # Escribir el mensaje en el archivo
         with open(output_file, "a", encoding="utf-8") as file:
             file.write(mensaje)
-        print("Evento registrado exitosamente.")
+        #print("Evento registrado exitosamente.")
     except Exception as e:
         print(f"Error al registrar el evento: {e}")
 
@@ -116,6 +134,25 @@ def leer_csv(nombre_archivo):
 
 # función para procesar el formulario con cada línea obtenida del archivo csv
 
-def completa_form (listado):
+def completa_form (registro):
     
     global driver
+    body = driver.find_element(By.TAG_NAME, 'body')
+
+    str_nombre = selecciona(By.ID, Locator.nombre)
+    str_apellido = selecciona(By.ID, Locator.apellido)
+    str_nombre_usuario = selecciona(By.ID, Locator.nombre_usuario)
+    str_email = selecciona(By.ID, Locator.email)
+    str_direccion1 = selecciona(By.ID, Locator.direccion1)
+    str_direccion2 = selecciona(By.ID, Locator.direccion2)
+    
+    # Está hecho de esta forma, pero realmente la función que obtiene el elemento, si no pudo, ya debería devolver el error al loop del script original en vez de continuar con los elementos. Entiendo que es regla de negocio o análisis de log.
+
+    escribir(str_nombre, registro['first_name'])
+    escribir(str_apellido, registro['last_name'])
+    escribir(str_nombre_usuario, registro['user_name'])
+    escribir(str_email, registro['email'])
+    escribir(str_direccion1, registro['address_1'])
+    escribir(str_direccion2, registro['address_2'])
+
+    esperar.corto()

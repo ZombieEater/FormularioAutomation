@@ -9,7 +9,7 @@
 
 Funcionamiento:
 
-- Se lee el archivo CSV y se lo almacena en un diccionario de Python. Se registra el evento y cantidad de registros leidos.
+- Se lee el archivo CSV y se lo almacena en un diccionario de Python. Se registra el evento y cantidad de registros leidos. (El archivo CSV fu'e creado con mockaroo.com)
 
 - Se instancia el driver de chrome.
 
@@ -24,6 +24,11 @@ Funcionamiento:
 - Se debería agregar la captura de errores de obtención del elemento antes de intentar llenarlo, hacerlo todo en un solo paso.
 
 - Uno de los elementos de prueba, tiene error en el email para verificar la captura de error.
+
+
+
+20241220 - Ejemplo en el script "ejemplo-assert.py" de como corta la ejecución al usar el assert directo, y como la continua al estar dentro de un TRY.
+
 
 
 ---------------

@@ -25,3 +25,5 @@ try:
     assert 'pepe' == 'dpepe', resultado_assert
 except Exception as e:
     print (e)
+
+print ('Sigo con otras ejecuciones sin que me corte el error.')

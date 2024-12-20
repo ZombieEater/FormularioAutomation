@@ -30,4 +30,4 @@ class Locator():
 class Messages():
     resultado_ok = 'El pago fue procesado correctamente!'
     mensaje_ok = 'TODO SALIO BIEN'
-    mensaje_error = 'A CAMBIAR DE RUBRO'
+    mensaje_error = 'ERROR'
